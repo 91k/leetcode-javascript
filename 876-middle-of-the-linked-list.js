@@ -10,12 +10,13 @@
  * @return {ListNode}
  */
 var middleNode = function (head) {
-    var tortoise = hare = head;
+    var fast = head;
+    var slow = head;
 
-    while (hare !== null && hare.next !== null) {
-        hare = hare.next.next;
-        tortoise = tortoise.next;
+    while (fast !== null && fast.next !== null) {
+        fast = fast.next.next;
+        slow = slow.next;
     }
 
-    return tortoise;
+    return slow;
 };
