@@ -15,7 +15,8 @@ var hasCycle = function (head) {
         return false;
     }
 
-    var tortoise = hare = head;
+    var hare = head;
+    var tortoise = head;
 
     while (hare.next !== null && hare.next.next !== null) {
         hare = hare.next.next;
