@@ -3,17 +3,17 @@
  * @param {number} target
  * @return {number[]}
  */
-function twoSum(nums, target) {
-    var object = {};
+var twoSum = function (nums, target) {
+    var seen = {};
 
-    for (var i = 0; i < nums.length; i++) {
-        var j = nums[i];
-        var k = object[target - j];
-
-        if (k !== undefined) {
-            return [k, i];
-        } else {
-            object[j] = i;
+    for (var i in nums) {
+        var index = seen[target - nums[i]];
+        if (index) {
+            return [index, i];
         }
+
+        seen[nums[i]] = i;
     }
+
+    return [];
 };
